@@ -1,14 +1,14 @@
 -- Задание 1
 
-SELECT a.district 
+SELECT DISTINCT a.district 
 FROM address a
 WHERE a.district LIKE 'K%a' and a.district NOT LIKE '% %'; -- я тут со столбцом ошибся, поэтому и условие выбора было не верным 
 
 -- Задание 2
 
 SELECT * FROM payment p 
-where p.payment_date > '2005-06-15'
-and p.payment_date < '2005-06-18'
+where p.payment_date > CAST('2005-06-15' AS DATE)
+and p.payment_date < CAST('2005-06-19' AS DATE)
 and p.amount > '10' 
 ORDER BY payment_date;
 
